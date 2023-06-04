@@ -1,20 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ModalPortal } from "react-native-modals"
+import { PlaceContext } from "./src/context/PlaceContext"
+import Navigation from "./src/navigations/StackNavigation"
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+   <>
+   <PlaceContext>
+    <Navigation/>
+    <ModalPortal/>
+   </PlaceContext>
+   </>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
+
